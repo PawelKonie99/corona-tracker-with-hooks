@@ -19,15 +19,15 @@ const Cards = ({ data: { confirmed, deaths, recovered, date } }) => {
                     {confirmedCount}
                 </h3>
             </div>
-            <div className={cx(styles.singleCart, styles.deaths)}>
-                <p className={styles.title}>Zmarli ludzie</p>
+            <div className={cx(styles.singleCart, styles.recovered)}>
+                <p className={styles.title}>Wyleczeni ludzie</p>
                 <p className={styles.date}>{new Date(date).toDateString()}</p>
                 <h3>
                     {recoveredCount}
                 </h3>
             </div>
-            <div className={cx(styles.singleCart, styles.recovered)}>
-                <p className={styles.title}>Wyleczeni ludzie</p>
+            <div className={cx(styles.singleCart, styles.deaths)}>
+                <p className={styles.title}>Zmarli ludzie</p>
                 <p className={styles.date}>{new Date(date).toDateString()}</p>
                 <h3>
                     {deathsCount}

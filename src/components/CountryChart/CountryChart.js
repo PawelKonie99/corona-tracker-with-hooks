@@ -5,8 +5,6 @@ import styles from './CountryChart.module.css'
 const CountryChart = ({ countryData }) => {
     if (!countryData) return <div className={styles.noInfo}> Brak danych :( </div>
 
-    console.log(countryData.confirmed, countryData.deaths, countryData.recovered, countryData.countryName)
-
     const data = {
         labels: ['Zakażeni ludzie', 'Wyleczeni ludzie', 'Zmarli ludzie'],
         datasets: [

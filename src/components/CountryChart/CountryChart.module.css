@@ -7,3 +7,9 @@
     margin-top: 5rem;
     font-size: 4rem;
 }
+
+@media (max-width: 1025px) {
+    .container {
+        width:80%;
+    }
+}
