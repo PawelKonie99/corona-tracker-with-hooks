@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import { fetchData, fetchCountry } from './api/api'
+import { GlobalChart, Cards, CountryChart, CountryPicker } from './components'
+import styles from './App.module.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [data, setData] = useState([])
+    const [showGlobalInfo, setShowGlobalInfo] = useState(false)
+    const [country, setCountry] = useState('')
+    const [countryData, setCountryData] = useState([])
+
+    const fetchAllData = async () => {
+        setData(await fetchData())
+    }
+
+    useEffect(() => {
+        fetchAllData()
+    }, [])
+
+    const fetchCountryData = async (country) => {
+        setCountryData(await fetchCountry(country))
+    }
+
+    useEffect(() => {
+        fetchCountryData(country)
+    }, [country])
+
+    const changeView = () => {
+        setShowGlobalInfo(!showGlobalInfo)
+    }
+
+    const handleCountry = (country) => {
+        setCountry(country)
+        fetchCountry(country)
+    }
+
+
+
+    return (
+        <div className={styles.container}>
+            <button className={styles.swapButton} onClick={changeView}>Zmień widok</button>
+            {showGlobalInfo ?
+                <div className={styles.globalContainer}><Cards data={data} />
+                    <GlobalChart data={data} /></div>
+                :
+                <div className={styles.countryContainer}>
+                    <CountryPicker handleCountry={handleCountry} />
+                    <CountryChart countryData={countryData} />
+                </div>}
+        </div>
+    )
 }
 
-export default App;
+export default App

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+.container {
+    margin-top: 1rem;
+    display:flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+
+.singleCart {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 12%;
+    font-size: 20px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.date {
+    margin: 1rem 0;
+    font-size: 22px;
+}
+
+.confirmed {
+    border-bottom: 6px solid rgb(0, 0, 255, 0.5);
+}
+
+.recovered {
+    border-bottom: 6px solid rgb(0, 255, 0, 0.5);
+}
+
+.deaths {
+    border-bottom: 6px solid rgb(255, 0, 0, 0.5);
+}
