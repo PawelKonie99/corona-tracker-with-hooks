@@ -4,7 +4,6 @@ import styles from './CountryPicker.module.css'
 
 const CountryPicker = ({ handleCountry, country }) => {
     const [allCountries, setAllCountries] = useState([])
-    // const [country, setCountry] = useState('')
     const getData = async () => {
         setAllCountries(await fetchCountries())
     }
