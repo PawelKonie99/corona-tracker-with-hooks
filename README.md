@@ -1,6 +1,6 @@
 # CoronaVirus-tracker
 
-## Simple app created with React.js
+#### Simple app created with React.js
 
 ## General info
 
@@ -12,7 +12,7 @@ In application you can toggle between two views, Global and for Single Country. 
 * Css3
 
 ## Live Application 
-https://pawelkonie99.github.io/corona-tracker-with-hooks/
+<https://pawelkonie99.github.io/corona-tracker-with-hooks/>
 
 ## Setup
 Cloning and Running the Application in local
@@ -28,10 +28,10 @@ The Application Runs on localhost:3000
 
 ## Application design
 I used some other libraries like:
-*axios
-*chart.js
-*classnames
-*react-countup
+* axios
+* chart.js
+* classnames
+* react-countup
 
 ## Status
 Project is: _in progress_, in future I want to add some stuff
